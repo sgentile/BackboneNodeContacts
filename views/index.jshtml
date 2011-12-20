@@ -1,0 +1,62 @@
+<script src="/Scripts/ContactsApp.js" type="text/javascript"></script>
+<script src="/Scripts/ContactsApp.Router.js" type="text/javascript"></script>
+<script src="/Scripts/ContactsApp.Contacts.js" type="text/javascript"></script>
+<style>
+    #contactsRegion
+    {
+        float: left;
+        width: 200px;
+    }
+    #mainRegion
+    {
+        float: left;
+    }
+    .remove-contact
+    {
+        color: red;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    .edit-contact
+    {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+</style>
+
+<h3>Simple View Switching Demo with Backbone</h3>
+<div id="contactsRegion">
+</div>
+<div id="mainRegion">
+</div>
+
+<!-- Templates -->
+<script type="text/template" id="viewone-template">
+	<p>This is View One</p>
+</script>
+
+<script type="text/template" id="viewtwo-template">
+	<p>This is View Two</p>
+</script>
+
+<script type="text/template" id="contact-template">
+	<span class="remove-contact">Remove</span> <span class="edit-contact">Edit</span> ${firstname} ${lastname}
+</script>
+
+<script type="text/template" id="add-contact-template">
+<fieldset>
+    <legend>Add Contact</legend>
+    <label for="firstname">First Name:</label><input type="text" id="firstname" /><br/>
+    <label for="lastname">Last Name:</label><input type="text" id="lastname" /><br/>
+    <input type="button" id="addContact_button" value="Add" />
+</fieldset>
+</script>
+
+<script type="text/template" id="edit-contact-template">  
+<fieldset>
+    <legend>Edit Contact</legend>
+    <p>${id}</p>
+    First Name: <input type="text" id="editFirstName" value="${firstname}"/><br/>
+    Last Name: <input type="text" id="editLastName" value="${lastname}" />
+</fieldset>  
+</script>
