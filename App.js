@@ -28,13 +28,6 @@ app.get("/", function(req, res){
 	res.render("index");
 });
 app.get("/Contact/list", function(req, res){
-	//var draft = 'draft';
-	//Post.byState(draft, function(err, posts){
-	//	res.render("list", {
-	//		draftPosts: posts
-	//	});
-	//});
-	
 	res.send(contacts);
 });
 

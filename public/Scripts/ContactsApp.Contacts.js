@@ -16,7 +16,6 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 	Contacts.ContactModels = Backbone.Collection.extend({
 		model: Contacts.ContactModel,
 		url: "Contact/list"
-		//url: "http://localhost/Contacts/contact/list"
 	});
 
 	Contacts.contacts = new Contacts.ContactModels();
@@ -49,8 +48,6 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 	});
 
 	Contacts.ContactsListView = Backbone.View.extend({
-		//el: "#contacts-list",
-		//model: Contact,
 		initialize: function () {
 			_.bindAll(this, "render");
 			this.collection.bind("change", this.render);
@@ -61,19 +58,12 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 			Contacts.contacts.fetch({ add: true });
 		},
 		render: function () {
-			//clear out the existing list to avoid "append" duplication
 			$(this.el).empty();
-			//use an array here rather than firehosing the DOM
-			//perf is a bit better
 			var els = [];
-			//loop the collection...
 			this.collection.models.forEach(function (contact) {
-				//rendering a view for each model in the collection
 				var view = new Contacts.ContactView({ model: contact });
-				//adding it to our array
 				els.push(view.render().el);
 			});
-			//push that array into this View's "el"
 			$(this.el).append(els);
 			return this;
 		}
@@ -112,7 +102,6 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 		},
 		render: function () { },
 		editContact: function (contact) {
-			//alert(JSON.stringify(contact));
 			this.model = contact;
 			var modelHolder = this.model;
 			var content = this.template.tmpl(modelHolder.toJSON());
@@ -124,11 +113,7 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
                 	buttons: {
                 		OK: function () {
                 			var $dialog = $(this);
-
-                			//                            var fn = this.model.get("firstname");
-                			modelHolder.set({ firstname: $("#editFirstName").val(), lastname: $("#editLastName").val() });
-                			//var newObject = $dialog.children('form').serializeObject();
-                			//alert(newObject);
+							modelHolder.set({ firstname: $("#editFirstName").val(), lastname: $("#editLastName").val() });
                 			modelHolder.save(contact, {
                 				success: function () {
                 					$dialog.dialog('close');

@@ -2,8 +2,6 @@
 ViewSwitcherApp.Router = Backbone.Router.extend({
 	routes: {
 		"": "defaultRoute"
-		//        ,
-		//		"add": "addViewRoute"
 	},
 	defaultRoute: function () {
 		ViewSwitcherApp.Contacts.show();
