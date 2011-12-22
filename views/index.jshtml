@@ -31,14 +31,6 @@
 </div>
 
 <!-- Templates -->
-<script type="text/template" id="viewone-template">
-	<p>This is View One</p>
-</script>
-
-<script type="text/template" id="viewtwo-template">
-	<p>This is View Two</p>
-</script>
-
 <script type="text/template" id="contact-template">
 	<span class="remove-contact">Remove</span> <span class="edit-contact">Edit</span> ${firstname} ${lastname}
 </script>
@@ -55,8 +47,7 @@
 <script type="text/template" id="edit-contact-template">  
 <fieldset>
     <legend>Edit Contact</legend>
-    <p>${id}</p>
-    First Name: <input type="text" id="editFirstName" value="${firstname}"/><br/>
-    Last Name: <input type="text" id="editLastName" value="${lastname}" />
+    First Name: <input type="text" id="firstname"/><br/>
+    Last Name: <input type="text" id="firstname" />
 </fieldset>  
 </script>

@@ -7,6 +7,18 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 			firstname: "",
 			lastname: ""
 		},
+		validate: function(attributes){
+			var errors = [];
+
+            if (!(/.+/.test(attributes.firstname)))
+              errors.push("Title cannot be blank.");
+
+            if (!/.+/.test(attributes.lastname))
+              errors.push("Description cannot be blank.");
+
+            if (errors.length > 0)
+              return errors;
+		},
 		url: function (type) {
 			if (type == "DELETE")
 				return "Contact/delete/" + this.get('id');
@@ -73,6 +85,10 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 		initialize: function () {
 			this.template = $("#add-contact-template");
 			this.model = new Contacts.ContactModel();
+			this.model.bind("error", this.handleError, this);			
+		},
+		handleError: function(model, error){
+			//alert(error);
 		},
 		render: function () {
 			var content = this.template.tmpl();
@@ -100,41 +116,55 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 			_.bindAll(this, "editContact");
 			ViewSwitcherApp.vent.bind('editContact', this.editContact);
 		},
-		render: function () { },
+		render: function () { 
+			console.log('render');
+		},
 		editContact: function (contact) {
-			this.model = contact;
-			var modelHolder = this.model;
-			var content = this.template.tmpl(modelHolder.toJSON());
 			var self = this;
+			this.model = contact;
+			//var content = this.template.tmpl(modelHolder.toJSON());
+			var content = this.template.tmpl(this.model.toJSON());
 			$(content)
                 .appendTo('body')
                 .dialog({
                 	modal: true,
                 	buttons: {
-                		OK: function () {
+                		"Update Contact": function () {
                 			var $dialog = $(this);
-							modelHolder.set({ firstname: $("#editFirstName").val(), lastname: $("#editLastName").val() });
-                			modelHolder.save(contact, {
+							self.model.set({ 
+								firstname: $("#firstName").val(), 
+								lastname: $("#lastname").val() 
+							});
+							console.log(self.model.get("firstname"));
+                			self.model.save(self.model, {
                 				success: function () {
                 					$dialog.dialog('close');
                 				}
                 			});
-                		}
+                		},
+							cancel: function () {
+		                		// Close the dialog:
+		                		$(this).dialog('close');
+		                	}
                 	},
-                	Cancel: function () {
-                		// Close the dialog:
-                		$(this).dialog('close');
-                	},
+					open : function(){
+						console.log('open');
+					},
+					create:function(){
+						console.log('create');
+						
+					},
                 	close: function (event, ui) {
                 		$(this).remove();
                 	}
                 });
+			console.log('prebind');
 			return this;
 		},
 		close: function () {
 			this.remove();
 			this.unbind();
-			//Backbone.ModelBinding.unbind(this);
+			Backbone.ModelBinding.unbind(this);
 		}
 	});
 

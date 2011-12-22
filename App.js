@@ -23,17 +23,18 @@ var contact = {
 
 contacts.push(contact);
 
-
 app.get("/", function(req, res){
 	res.render("index");
 });
 app.get("/Contact/list", function(req, res){
+	console.log("Get " + JSON.stringify(contacts));
 	res.send(contacts);
 });
 
 app.post('/Contact/create', function(req, res){
   	var newContact = req.body;
 	newContact.id = uuid.v1();
+	console.log("Create " + JSON.stringify(newContact));
 	contacts.push(newContact);
   	res.send(req.body);
 });
@@ -44,6 +45,7 @@ app.put('/Contact/update', function(req, res){
 	});
   	editContact.firstname = req.body.firstname;
 	editContact.lastname = req.body.lastname;
+	console.log("Update " + JSON.stringify(editContact));
   	res.send(req.body);
 });
 
@@ -51,6 +53,7 @@ app.del('/Contact/delete/:id', function(req, res){
 	var editContact = _.find(contacts, function(c){
 		return req.params.id == c.id;
 	});
+	console.log("Delete " + JSON.stringify(editContact));
 	contacts = _.without(contacts, editContact);
 	res.send({ id : req.params.id});
 });
