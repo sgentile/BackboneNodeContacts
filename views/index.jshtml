@@ -47,9 +47,11 @@
 </script>
 
 <script type="text/template" id="edit-contact-template">  
+<form id="edit-contact-form">
 <fieldset>
     <legend>Edit Contact</legend>
     First Name: <input type="text" id="firstname"/><br/>
     Last Name: <input type="text" id="firstname" />
 </fieldset>  
+</form>
 </script>
