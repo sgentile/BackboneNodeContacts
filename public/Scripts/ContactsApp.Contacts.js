@@ -7,18 +7,6 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 			firstname: "",
 			lastname: ""
 		},
-		validate: function(attributes){
-			var errors = [];
-
-            if (!(/.+/.test(attributes.firstname)))
-              errors.push("Title cannot be blank.");
-
-            if (!/.+/.test(attributes.lastname))
-              errors.push("Description cannot be blank.");
-
-            if (errors.length > 0)
-              return errors;
-		},
 		url: function (type) {
 			if (type == "DELETE")
 				return "Contact/delete/" + this.get('id');
@@ -85,23 +73,31 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 		initialize: function () {
 			this.template = $("#add-contact-template");
 			this.model = new Contacts.ContactModel();
-			this.model.bind("error", this.handleError, this);			
+			//this.model.bind('error', this.handleError);	
+			
 		},
-		handleError: function(model, error){
-			//alert(error);
-		},
+		//handleError: function(model, errors){
+		//	alert(JSON.stringify(errors));
+		//},
 		render: function () {
 			var content = this.template.tmpl();
 			$(this.el).html(content);
 			Backbone.ModelBinding.bind(this);
+			$("#add-contact-form").validate();	
 			return this;
 		},
 		events: {
-			"click #addContact_button": "addContact"
+			"click #addContact_button": "addContact"			
 		},
 		addContact: function (event) {
-			Contacts.contacts.create(this.model);
-			ViewSwitcherApp.mainRegion.show(new Contacts.AddContactView());
+			if($("#add-contact-form").valid())
+			{
+				Contacts.contacts.create(this.model, {
+					success: function(model, response){
+						ViewSwitcherApp.mainRegion.show(new Contacts.AddContactView());
+					}
+				});
+			}
 		},
 		close: function () {
 			this.remove();

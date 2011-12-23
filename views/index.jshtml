@@ -36,12 +36,14 @@
 </script>
 
 <script type="text/template" id="add-contact-template">
+<form id="add-contact-form">
 <fieldset>
     <legend>Add Contact</legend>
-    <label for="firstname">First Name:</label><input type="text" id="firstname" /><br/>
-    <label for="lastname">Last Name:</label><input type="text" id="lastname" /><br/>
+    <label for="firstname">First Name:</label><input type="text" id="firstname" class="required"/><br/>
+    <label for="lastname">Last Name:</label><input type="text" id="lastname" class="required"/><br/>
     <input type="button" id="addContact_button" value="Add" />
 </fieldset>
+</form>
 </script>
 
 <script type="text/template" id="edit-contact-template">  
