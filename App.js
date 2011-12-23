@@ -26,12 +26,12 @@ contacts.push(contact);
 app.get("/", function(req, res){
 	res.render("index");
 });
-app.get("/Contact/list", function(req, res){
+app.get("/Contact", function(req, res){
 	console.log("Get " + JSON.stringify(contacts));
 	res.send(contacts);
 });
 
-app.post('/Contact/create', function(req, res){
+app.post('/Contact', function(req, res){
   	var newContact = req.body;
 	newContact.id = uuid.v1();
 	console.log("Create " + JSON.stringify(newContact));
@@ -39,7 +39,7 @@ app.post('/Contact/create', function(req, res){
   	res.send(req.body);
 });
 
-app.put('/Contact/update', function(req, res){
+app.put('/Contact/:id', function(req, res){
 	var editContact = _.find(contacts, function(c){
 		return req.body.id == c.id;
 	});
@@ -49,7 +49,7 @@ app.put('/Contact/update', function(req, res){
   	res.send(req.body);
 });
 
-app.del('/Contact/delete/:id', function(req, res){
+app.del('/Contact/:id', function(req, res){
 	var editContact = _.find(contacts, function(c){
 		return req.params.id == c.id;
 	});

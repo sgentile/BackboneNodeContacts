@@ -1,4 +1,4 @@
-﻿/// <reference path="backbone.js" />
+/// <reference path="backbone.js" />
 ModelBase = Backbone.Model.extend({
     defaults: {
         id: null
