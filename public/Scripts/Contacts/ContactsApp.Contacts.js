@@ -112,9 +112,10 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 		},
 		editContact: function (contact) {
 			var self = this;
-			this.model = contact;
+			self.model = contact;
 			//var content = this.template.tmpl(modelHolder.toJSON());
-			var content = this.template.tmpl(this.model.toJSON());
+			var content = this.template.tmpl(self.model.toJSON());
+   			$("#edit-contact-form").validate();
 			$(content)
                 .appendTo('body')
                 .dialog({
@@ -122,16 +123,18 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
                 	buttons: {
                 		"Update Contact": function () {
                 			var $dialog = $(this);
+							console.log($("#editFirstname").val() + " " + $("#editLastname").val() );	
 							self.model.set({ 
-								firstname: $("#firstName").val(), 
-								lastname: $("#lastname").val() 
+								firstname: $("#editFirstname").val(), 
+								lastname: $("#editLastname").val() 
 							});
-							console.log(self.model.get("firstname"));
-                			self.model.save(self.model, {
-                				success: function () {
-                					$dialog.dialog('close');
-                				}
-                			});
+							if($("#edit-contact-form").valid()){
+								self.model.save(self.model, {
+                					success: function () {
+                						$dialog.dialog('close');
+                					}
+                				});
+							}
                 		},
 							cancel: function () {
 		                		// Close the dialog:
@@ -142,8 +145,7 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 						console.log('open');
 					},
 					create:function(){
-						console.log('create');
-						
+						console.log('create');					
 					},
                 	close: function (event, ui) {
                 		$(this).remove();
