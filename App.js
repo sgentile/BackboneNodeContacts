@@ -1,6 +1,7 @@
 var express = require('express'),
 uuid = require('node-uuid'); //https://github.com/broofa/node-uuid
 var _ = require('underscore')._
+var fs = require('fs');
 
 app = module.exports = express.createServer();
 //app = express.createServer();
@@ -32,11 +33,32 @@ app.get("/Contact", function(req, res){
 });
 
 app.post('/Contact', function(req, res){
-  	var newContact = req.body;
+	var newContact = req.body;
 	newContact.id = uuid.v1();
 	console.log("Create " + JSON.stringify(newContact));
 	contacts.push(newContact);
-  	res.send(req.body);
+	res.send(req.body);
+});
+
+var url = require('url');
+
+app.get("/template/:area/:name", function(req, res) {
+	var area = req.params.area;
+	var name = req.params.name;
+
+	var path = "public/Scripts/" + area + "/" + name + ".tmpl.htm";
+
+	console.log(path);
+	fs.readFile(path, function(error, content) {
+		if(error) {
+			res.writeHead(404);
+			res.end();
+		} else {
+			res.writeHead(200, { 'Content-Type': 'text/html' });
+			res.end(content, 'utf-8');
+		}
+	});
+	
 });
 
 app.put('/Contact/:id', function(req, res){
