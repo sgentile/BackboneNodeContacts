@@ -75,10 +75,18 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 		//	alert(JSON.stringify(errors));
 		//},
 		render: function () {
-			var content = this.template.tmpl();
-			$(this.el).html(content);
-			Backbone.ModelBinding.bind(this);
-			$("#add-contact-form").validate();	
+			var path = "/template/Contacts/AddContact";
+			var self = this;
+			console.log(path);
+			$.get(path, function(markup) {
+				$.template( "addcontacttemplate", markup );
+				var content = $.tmpl("addcontacttemplate", this.model);
+
+				$(self.el).html(content);
+				$("#add-contact-form").validate();
+				Backbone.ModelBinding.bind(self);
+			});
+
 			return this;
 		},
 		events: {
