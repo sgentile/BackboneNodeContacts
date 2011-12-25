@@ -173,6 +173,7 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 
 /******  these are just from initial prototype ******/
 /******  VIEWONE ******/
+/*
 ViewSwitcherApp.ViewOne = (function (ViewSwitcherApp, Backbone) {
 	var ViewOne = {};
 
@@ -187,7 +188,7 @@ ViewSwitcherApp.ViewOne = (function (ViewSwitcherApp, Backbone) {
 	return ViewOne;
 })(ViewSwitcherApp, Backbone);
 
-/******  VIEWTWO ******/
+
 ViewSwitcherApp.ViewTwo = (function (ViewSwitcherApp, Backbone) {
 	var ViewTwo = {};
 	ViewTwo.SimpleView = Backbone.View.extend({
@@ -200,3 +201,4 @@ ViewSwitcherApp.ViewTwo = (function (ViewSwitcherApp, Backbone) {
 	};
 	return ViewTwo;
 })(ViewSwitcherApp, Backbone);
+*/

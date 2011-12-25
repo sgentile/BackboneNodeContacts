@@ -1,5 +1,6 @@
-<script src="/Scripts/Contacts/ContactsApp.js" type="text/javascript"></script>
-<script src="/Scripts/Contacts/ContactsApp.Router.js" type="text/javascript"></script>
+<script src="/Scripts/ContactsApp.js" type="text/javascript"></script>
+<script src="/Scripts/ContactsApp.Router.js" type="text/javascript"></script>
+<script src="/Scripts/Home/ContactsApp.Home.js" type="text/javascript"></script>
 <script src="/Scripts/Contacts/ContactsApp.Contacts.js" type="text/javascript"></script>
 <style>
     #contactsRegion
@@ -54,4 +55,9 @@
     Last Name: <input type="text" id="editLastname"  name="editLastname" class="required" value="${lastname}"/><br/>
 </fieldset>  
 </form>
+</script>
+
+<script type="text/template" id="home-template">
+<h3>Welcome to Backbone Node Contacts App</h3>
+<p><a href="#contacts">Go to contacts</a></p>
 </script>
