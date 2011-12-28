@@ -151,7 +151,7 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 		//ViewSwitcherApp.editContactsModalRegion.show(new Contacts.EditContactView());
 		ViewSwitcherApp.mainRegion.show(new Contacts.AddContactView());
 		ViewSwitcherApp.contactsRegion.show(new Contacts.ContactsListView({ collection: Contacts.contacts }));
-		ViewSwitcherApp.showRoute("");
+		ViewSwitcherApp.showRoute("contacts");
 	};
 	return Contacts;
 })(ViewSwitcherApp, Backbone);
