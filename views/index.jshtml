@@ -30,6 +30,7 @@
 </div>
 <div id="mainRegion">
 </div>
+<div id="editContactsModalRegion"></div>
 
 <!-- Templates -->
 <script type="text/template" id="contact-template">
@@ -51,8 +52,8 @@
 <form id="edit-contact-form">
 <fieldset>
     <legend>Edit Contact</legend>
-    First Name: <input type="text" id="editFirstname" name="editFirstname" class="required" value="${firstname}"/><br/>
-    Last Name: <input type="text" id="editLastname"  name="editLastname" class="required" value="${lastname}"/><br/>
+    First Name: <input type="text" id="firstname" name="firstname" class="required" value="${firstname}"/><br/>
+    Last Name: <input type="text" id="lastname"  name="lastname" class="required" value="${lastname}"/><br/>
 </fieldset>  
 </form>
 </script>

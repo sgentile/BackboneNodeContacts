@@ -6,7 +6,7 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 			id: null,
 			firstname: "",
 			lastname: ""
-		},
+		}
 	});
 	Contacts.ContactModels = Backbone.Collection.extend({
 		model: Contacts.ContactModel,
@@ -38,7 +38,8 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 			this.model.destroy();
 		},
 		edit: function () {
-			ViewSwitcherApp.vent.trigger("editContact", this.model);
+			//ViewSwitcherApp.vent.trigger("editContact", this.model);
+            ViewSwitcherApp.editContactsModalRegion.show(new Contacts.EditContactView({model:this.model}));
 		}
 	});
 
@@ -102,57 +103,42 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 	});
 
 	Contacts.EditContactView = Backbone.View.extend({
-		initialize: function () {
+        initialize: function () {
 			this.template = $("#edit-contact-template");
-			_.bindAll(this, "editContact");
-			ViewSwitcherApp.vent.bind('editContact', this.editContact);
+			//_.bindAll(this, "editContact");
+			//ViewSwitcherApp.vent.bind('editContact', this.editContact);
 		},
+        onShow: function(){
+            //var self = this;
+            //var content = this.template.tmpl(self.model.toJSON());
+            var self = this;
+            var content = this.template.tmpl();
+            $(this.el).html(content);
+            Backbone.ModelBinding.bind(this);
+
+            $("#edit-contact-form").validate();
+
+            $(this.el).dialog({
+                modal: true,
+                buttons:{
+                    "Update Contact": function(){
+                        self.model.save(self.model, {
+                            success: function () {
+                                $(this).dialog('close');
+                                self.close();
+                            }
+                        });
+                    },
+                    cancel: function () {
+                        // Close the dialog:
+                        $(this).dialog('close');
+                        self.close();
+                    }
+                }
+            });
+        },
 		render: function () { 
 			console.log('render');
-		},
-		editContact: function (contact) {
-			var self = this;
-			self.model = contact;
-			//var content = this.template.tmpl(modelHolder.toJSON());
-			var content = this.template.tmpl(self.model.toJSON());
-   			$("#edit-contact-form").validate();
-			$(content)
-                .appendTo('body')
-                .dialog({
-                	modal: true,
-                	buttons: {
-                		"Update Contact": function () {
-                			var $dialog = $(this);
-							console.log($("#editFirstname").val() + " " + $("#editLastname").val() );	
-							self.model.set({ 
-								firstname: $("#editFirstname").val(), 
-								lastname: $("#editLastname").val() 
-							});
-							if($("#edit-contact-form").valid()){
-								self.model.save(self.model, {
-                					success: function () {
-                						$dialog.dialog('close');
-                					}
-                				});
-							}
-                		},
-							cancel: function () {
-		                		// Close the dialog:
-		                		$(this).dialog('close');
-		                	}
-                	},
-					open : function(){
-						console.log('open');
-					},
-					create:function(){
-						console.log('create');					
-					},
-                	close: function (event, ui) {
-                		$(this).remove();
-                	}
-                });
-			console.log('prebind');
-			return this;
 		},
 		close: function () {
 			this.remove();
@@ -162,43 +148,10 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 	});
 
 	Contacts.show = function () {
-		ViewSwitcherApp.editContactsModalRegion.show(new Contacts.EditContactView());
+		//ViewSwitcherApp.editContactsModalRegion.show(new Contacts.EditContactView());
 		ViewSwitcherApp.mainRegion.show(new Contacts.AddContactView());
 		ViewSwitcherApp.contactsRegion.show(new Contacts.ContactsListView({ collection: Contacts.contacts }));
 		ViewSwitcherApp.showRoute("");
 	};
 	return Contacts;
 })(ViewSwitcherApp, Backbone);
-
-
-/******  these are just from initial prototype ******/
-/******  VIEWONE ******/
-/*
-ViewSwitcherApp.ViewOne = (function (ViewSwitcherApp, Backbone) {
-	var ViewOne = {};
-
-	ViewOne.SimpleView = Backbone.View.extend({
-		template: "#viewone-template"
-	});
-
-	ViewOne.show = function () {
-		ViewSwitcherApp.mainRegion.show(new ViewOne.SimpleView());
-		ViewSwitcherApp.showRoute("viewone");
-	};
-	return ViewOne;
-})(ViewSwitcherApp, Backbone);
-
-
-ViewSwitcherApp.ViewTwo = (function (ViewSwitcherApp, Backbone) {
-	var ViewTwo = {};
-	ViewTwo.SimpleView = Backbone.View.extend({
-		template: "#viewtwo-template"
-	});
-
-	ViewTwo.show = function () {
-		ViewSwitcherApp.mainRegion.show(new ViewTwo.SimpleView());
-		ViewSwitcherApp.showRoute("viewtwo");
-	};
-	return ViewTwo;
-})(ViewSwitcherApp, Backbone);
-*/

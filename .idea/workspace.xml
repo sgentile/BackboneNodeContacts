@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d65b02c5-a5c2-4aee-8937-cd1565d7f109" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/BackboneNodeContacts.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/Scripts/Home/ContactsApp.Home.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/Scripts/Contacts/ContactsApp.Router.js" afterPath="$PROJECT_DIR$/public/Scripts/ContactsApp.Router.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/Scripts/Contacts/ContactsApp.js" afterPath="$PROJECT_DIR$/public/Scripts/ContactsApp.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/Scripts/Thirdparty/backbone.marionette.js" afterPath="$PROJECT_DIR$/public/Scripts/Thirdparty/backbone.marionette.0.1.0.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/Scripts/Contacts/ContactsApp.Contacts.js" afterPath="$PROJECT_DIR$/public/Scripts/Contacts/ContactsApp.Contacts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/Scripts/Thirdparty/backbone.marionette.js" afterPath="$PROJECT_DIR$/public/Scripts/Thirdparty/backbone.marionette.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.jshtml" afterPath="$PROJECT_DIR$/views/index.jshtml" />
     </list>
     <ignored path="BackboneNodeContacts.iws" />
@@ -57,10 +49,86 @@
       <file leaf-file-name="ContactsApp.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/Scripts/ContactsApp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="0" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0">
+            <state line="18" column="54" selection-start="563" selection-end="586" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ContactsApp.Contacts.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/Scripts/Contacts/ContactsApp.Contacts.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="9" selection-start="1158" selection-end="1158" vertical-scroll-proportion="0.82435596">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="backbone.marionette.0.1.0.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/Scripts/Thirdparty/backbone.marionette.0.1.0.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="39" selection-start="593" selection-end="593" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1324156652000" expanded="true" signature="0:227" placeholder="//..." />
+                <marker date="1324156652000" expanded="true" signature="278:5341" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="345:384" placeholder="//..." />
+                <marker date="1324156652000" expanded="true" signature="390:553" placeholder="//..." />
+                <marker date="1324156652000" expanded="true" signature="604:783" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="678:747" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="852:1710" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="863:1189" placeholder="//..." />
+                <marker date="1324156652000" expanded="true" signature="1220:1385" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="1424:1517" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="1462:1507" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="1555:1704" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="1648:1694" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="1718:1771" placeholder="//..." />
+                <marker date="1324156652000" expanded="true" signature="1777:1939" placeholder="//..." />
+                <marker date="1324156652000" expanded="true" signature="1988:2111" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="2178:4134" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="2227:2287" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="2298:2473" placeholder="//..." />
+                <marker date="1324156652000" expanded="true" signature="2508:2803" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="2629:2738" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="2814:3048" placeholder="//..." />
+                <marker date="1324156652000" expanded="true" signature="3088:3801" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="3121:3247" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="3333:3791" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="3387:3777" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="3498:3672" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="3577:3648" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="3678:3758" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="3844:4128" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="3877:3916" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="3963:4118" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="4022:4104" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="4142:4167" placeholder="//..." />
+                <marker date="1324156652000" expanded="true" signature="4173:4363" placeholder="//..." />
+                <marker date="1324156652000" expanded="true" signature="4416:4541" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="4638:5223" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="4727:4782" placeholder="{...}" />
+                <marker date="1324156652000" expanded="true" signature="4788:4874" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="backbone.marionette.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/Scripts/Thirdparty/backbone.marionette.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="327" column="24" selection-start="10960" selection-end="10960" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jshtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/index.jshtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="4" selection-start="1720" selection-end="1720" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -74,60 +142,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContactsApp.Contacts.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/Scripts/Contacts/ContactsApp.Contacts.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#25#0" expanded="false" />
-                <element signature="e#160#230#0" expanded="false" />
-                <element signature="e#174#226#0" expanded="false" />
-                <element signature="e#286#339#0" expanded="false" />
-                <element signature="e#440#1052#0" expanded="false" />
-                <element signature="e#517#595#0" expanded="false" />
-                <element signature="e#607#691#0" expanded="false" />
-                <element signature="e#715#908#0" expanded="false" />
-                <element signature="e#932#962#0" expanded="false" />
-                <element signature="e#984#1049#0" expanded="false" />
-                <element signature="e#1106#1671#0" expanded="false" />
-                <element signature="e#1134#1401#0" expanded="false" />
-                <element signature="e#1425#1668#0" expanded="false" />
-                <element signature="e#1520#1619#0" expanded="false" />
-                <element signature="e#1723#2601#0" expanded="false" />
-                <element signature="e#1751#1902#0" expanded="false" />
-                <element signature="e#1906#1945#0" expanded="false" />
-                <element signature="e#2011#2176#0" expanded="false" />
-                <element signature="e#2188#2240#0" expanded="false" />
-                <element signature="e#2273#2495#0" expanded="false" />
-                <element signature="e#2316#2491#0" expanded="false" />
-                <element signature="e#2359#2484#0" expanded="false" />
-                <element signature="e#2400#2478#0" expanded="false" />
-                <element signature="e#2518#2598#0" expanded="false" />
-                <element signature="e#2654#4371#0" expanded="false" />
-                <element signature="e#2682#2833#0" expanded="false" />
-                <element signature="e#2857#2889#0" expanded="false" />
-                <element signature="e#2925#4265#0" expanded="false" />
-                <element signature="e#3205#4216#0" expanded="false" />
-                <element signature="e#3263#3970#0" expanded="false" />
-                <element signature="e#3313#3814#0" expanded="false" />
-                <element signature="e#3410#3434#0" expanded="false" />
-                <element signature="e#3461#3563#0" expanded="false" />
-                <element signature="e#3608#3794#0" expanded="false" />
-                <element signature="e#3646#3783#0" expanded="false" />
-                <element signature="e#3690#3761#0" expanded="false" />
-                <element signature="e#3843#3951#0" expanded="false" />
-                <element signature="e#3994#4029#0" expanded="false" />
-                <element signature="e#4053#4095#0" expanded="false" />
-                <element signature="e#4142#4198#0" expanded="false" />
-                <element signature="e#4288#4368#0" expanded="false" />
-                <element signature="e#4745#4799#0" expanded="false" />
-                <element signature="e#4800#4824#0" expanded="false" />
-                <element signature="e#4825#5535#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ContactsApp.Home.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/Scripts/Home/ContactsApp.Home.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -137,19 +151,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jshtml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/index.jshtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="26" selection-start="1955" selection-end="1955" vertical-scroll-proportion="0.7874494">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="280" column="0" selection-start="5526" selection-end="5526" vertical-scroll-proportion="0.0">
+            <state line="318" column="37" selection-start="6369" selection-end="6369" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -167,25 +172,22 @@
     <option name="UPDATE_CHANGES_POLICY" value="STASH" />
     <option name="LINE_SEPARATORS_CONVERSION" value="ASK" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///dummy.txt" root0="SKIP_INSPECTION" />
-    <setting file="mock:///dummy.txt" root0="SKIP_INSPECTION" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/public/Scripts/Home/ContactsApp.Home.js" />
-        <option value="$PROJECT_DIR$/public/Scripts/Contacts/ContactsApp.Contacts.js" />
         <option value="$PROJECT_DIR$/public/Scripts/ContactsApp.Router.js" />
+        <option value="$PROJECT_DIR$/public/Scripts/Thirdparty/backbone.marionette.js" />
         <option value="$PROJECT_DIR$/views/index.jshtml" />
+        <option value="$PROJECT_DIR$/public/Scripts/Contacts/ContactsApp.Contacts.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="44" />
-    <option name="y" value="22" />
-    <option name="width" value="1396" />
-    <option name="height" value="878" />
+    <option name="x" value="62" />
+    <option name="y" value="32" />
+    <option name="width" value="1393" />
+    <option name="height" value="783" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -213,7 +215,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -255,6 +256,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BackboneNodeContacts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BackboneNodeContacts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Thirdparty" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -318,11 +341,13 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RunManager" selected="Node JS.App">
     <configuration default="false" name="App" type="NodeJSConfigurationType" factoryName="Node JS" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="$PROJECT_DIR$/App.js">
@@ -339,7 +364,7 @@
     </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
       <JSDebuggerConfigurationSettings>
-        <option name="engineId" />
+        <option name="engineId" value="embedded" />
         <option name="fileUrl" />
       </JSDebuggerConfigurationSettings>
       <method />
@@ -349,34 +374,53 @@
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <configuration useDefault="false">$USER_HOME$/.subversion_IDEA</configuration>
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+      <changelist id="d65b02c5-a5c2-4aee-8937-cd1565d7f109" name="Default" comment="" />
       <created>1324759197402</created>
       <updated>1324759197402</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="44" y="22" width="1396" height="878" extended-state="0" />
-    <editor active="false" />
+    <frame x="62" y="32" width="1393" height="783" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298193" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24836126" sideWeight="0.715415" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28458497" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24817519" sideWeight="0.71686745" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28313252" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938075" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="JsTestDriver Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="JsTestDriver Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -438,34 +482,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="689" selection-end="689" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="280" column="0" selection-start="5526" selection-end="5526" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/layout.jshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/Scripts/Home/ContactsApp.Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="30" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/Scripts/ContactsApp.Router.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="5" selection-start="285" selection-end="285" vertical-scroll-proportion="0.0">
@@ -473,70 +489,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/Scripts/ContactsApp.js">
+    <entry file="file://$PROJECT_DIR$/public/Scripts/Home/ContactsApp.Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0">
+        <state line="17" column="30" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="318" column="37" selection-start="6369" selection-end="6369" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Scripts/Thirdparty/backbone.marionette.0.1.0.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="39" selection-start="593" selection-end="593" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1324156652000" expanded="true" signature="0:227" placeholder="//..." />
+            <marker date="1324156652000" expanded="true" signature="278:5341" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="345:384" placeholder="//..." />
+            <marker date="1324156652000" expanded="true" signature="390:553" placeholder="//..." />
+            <marker date="1324156652000" expanded="true" signature="604:783" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="678:747" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="852:1710" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="863:1189" placeholder="//..." />
+            <marker date="1324156652000" expanded="true" signature="1220:1385" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="1424:1517" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="1462:1507" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="1555:1704" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="1648:1694" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="1718:1771" placeholder="//..." />
+            <marker date="1324156652000" expanded="true" signature="1777:1939" placeholder="//..." />
+            <marker date="1324156652000" expanded="true" signature="1988:2111" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="2178:4134" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="2227:2287" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="2298:2473" placeholder="//..." />
+            <marker date="1324156652000" expanded="true" signature="2508:2803" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="2629:2738" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="2814:3048" placeholder="//..." />
+            <marker date="1324156652000" expanded="true" signature="3088:3801" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="3121:3247" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="3333:3791" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="3387:3777" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="3498:3672" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="3577:3648" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="3678:3758" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="3844:4128" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="3877:3916" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="3963:4118" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="4022:4104" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="4142:4167" placeholder="//..." />
+            <marker date="1324156652000" expanded="true" signature="4173:4363" placeholder="//..." />
+            <marker date="1324156652000" expanded="true" signature="4416:4541" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="4638:5223" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="4727:4782" placeholder="{...}" />
+            <marker date="1324156652000" expanded="true" signature="4788:4874" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Scripts/Thirdparty/backbone.marionette.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="327" column="24" selection-start="10960" selection-end="10960" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/Scripts/Contacts/ContactsApp.Contacts.js">
+    <entry file="file://$PROJECT_DIR$/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#25#0" expanded="false" />
-            <element signature="e#160#230#0" expanded="false" />
-            <element signature="e#174#226#0" expanded="false" />
-            <element signature="e#286#339#0" expanded="false" />
-            <element signature="e#440#1052#0" expanded="false" />
-            <element signature="e#517#595#0" expanded="false" />
-            <element signature="e#607#691#0" expanded="false" />
-            <element signature="e#715#908#0" expanded="false" />
-            <element signature="e#932#962#0" expanded="false" />
-            <element signature="e#984#1049#0" expanded="false" />
-            <element signature="e#1106#1671#0" expanded="false" />
-            <element signature="e#1134#1401#0" expanded="false" />
-            <element signature="e#1425#1668#0" expanded="false" />
-            <element signature="e#1520#1619#0" expanded="false" />
-            <element signature="e#1723#2601#0" expanded="false" />
-            <element signature="e#1751#1902#0" expanded="false" />
-            <element signature="e#1906#1945#0" expanded="false" />
-            <element signature="e#2011#2176#0" expanded="false" />
-            <element signature="e#2188#2240#0" expanded="false" />
-            <element signature="e#2273#2495#0" expanded="false" />
-            <element signature="e#2316#2491#0" expanded="false" />
-            <element signature="e#2359#2484#0" expanded="false" />
-            <element signature="e#2400#2478#0" expanded="false" />
-            <element signature="e#2518#2598#0" expanded="false" />
-            <element signature="e#2654#4371#0" expanded="false" />
-            <element signature="e#2682#2833#0" expanded="false" />
-            <element signature="e#2857#2889#0" expanded="false" />
-            <element signature="e#2925#4265#0" expanded="false" />
-            <element signature="e#3205#4216#0" expanded="false" />
-            <element signature="e#3263#3970#0" expanded="false" />
-            <element signature="e#3313#3814#0" expanded="false" />
-            <element signature="e#3410#3434#0" expanded="false" />
-            <element signature="e#3461#3563#0" expanded="false" />
-            <element signature="e#3608#3794#0" expanded="false" />
-            <element signature="e#3646#3783#0" expanded="false" />
-            <element signature="e#3690#3761#0" expanded="false" />
-            <element signature="e#3843#3951#0" expanded="false" />
-            <element signature="e#3994#4029#0" expanded="false" />
-            <element signature="e#4053#4095#0" expanded="false" />
-            <element signature="e#4142#4198#0" expanded="false" />
-            <element signature="e#4288#4368#0" expanded="false" />
-            <element signature="e#4745#4799#0" expanded="false" />
-            <element signature="e#4800#4824#0" expanded="false" />
-            <element signature="e#4825#5535#0" expanded="false" />
-          </folding>
+        <state line="29" column="0" selection-start="689" selection-end="689" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Scripts/ContactsApp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="54" selection-start="563" selection-end="586" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layout.jshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/index.jshtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="26" selection-start="1955" selection-end="1955" vertical-scroll-proportion="0.7874494">
+        <state line="55" column="4" selection-start="1720" selection-end="1720" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Scripts/Contacts/ContactsApp.Contacts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="9" selection-start="1158" selection-end="1158" vertical-scroll-proportion="0.82435596">
           <folding />
         </state>
       </provider>
