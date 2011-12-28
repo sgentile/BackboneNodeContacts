@@ -19,7 +19,6 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 		tagName: 'li',
 		model: Contacts.ContactModel,
 		initialize: function () {
-			this.template = $("#contact-template");
 			_.bindAll(this, "render");
 		},
 		events: {
@@ -28,9 +27,18 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 		},
 		render: function () {
 			//render the jQuery template
-			var content = this.template.tmpl(this.model.toJSON());
+			//var content = this.template.tmpl(this.model.toJSON());
 			//take the rendered HTML and pop it into the DOM
-			$(this.el).html(content);
+			var path = "/template/Contacts/Contact";
+			var self = this;
+			console.log(path);
+			$.get(path, function(markup) {
+				$.template( "contacttemplate", markup );
+				var content = $.tmpl("contacttemplate", self.model.toJSON());
+
+				$(self.el).html(content);
+			});
+
 
 			return this;
 		},

@@ -32,11 +32,6 @@
 </div>
 <div id="editContactsModalRegion"></div>
 
-<!-- Templates -->
-<script type="text/template" id="contact-template">
-	<span class="remove-contact">Remove</span> <span class="edit-contact">Edit</span> ${firstname} ${lastname}
-</script>
-
 <script type="text/template" id="edit-contact-template">  
 	<form id="edit-contact-form">
 		<fieldset>
