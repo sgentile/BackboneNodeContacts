@@ -38,16 +38,16 @@
 </script>
 
 <script type="text/template" id="edit-contact-template">  
-<form id="edit-contact-form">
-<fieldset>
-    <legend>Edit Contact</legend>
-    First Name: <input type="text" id="firstname" name="firstname" class="required" value="${firstname}"/><br/>
-    Last Name: <input type="text" id="lastname"  name="lastname" class="required" value="${lastname}"/><br/>
-</fieldset>  
-</form>
+	<form id="edit-contact-form">
+		<fieldset>
+			<legend>Edit Contact</legend>
+			First Name: <input type="text" id="firstname" name="firstname" class="required" value="${firstname}"/><br/>
+			Last Name: <input type="text" id="lastname"  name="lastname" class="required" value="${lastname}"/><br/>
+		</fieldset>  
+	</form>
 </script>
 
 <script type="text/template" id="home-template">
-<h3>Welcome to Backbone Node Contacts App</h3>
-<p><a href="#contacts">Go to contacts</a></p>
+	<h3>Welcome to Backbone Node Contacts App</h3>
+	<p><a href="#contacts">Go to contacts</a></p>
 </script>
