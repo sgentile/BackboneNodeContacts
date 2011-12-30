@@ -6,7 +6,11 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 			id: null,
 			firstname: "",
 			lastname: ""
-		}
+		},
+		initialize: function(){
+		    var memento = new Backbone.Memento(this);
+		    _.extend(this, memento);
+		 }
 	});
 	Contacts.ContactModels = Backbone.Collection.extend({
 		model: Contacts.ContactModel,
@@ -125,13 +129,11 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 			//ViewSwitcherApp.vent.bind('editContact', this.editContact);
 		},
         onShow: function(){
-            //var self = this;
-            //var content = this.template.tmpl(self.model.toJSON());
             var self = this;
             var content = this.template.tmpl();
             $(this.el).html(content);
             Backbone.ModelBinding.bind(this);
-
+			self.model.store();
             $("#edit-contact-form").validate();
 
             $(this.el).dialog({
@@ -147,6 +149,7 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
                     },
                     cancel: function () {
                         // Close the dialog:
+                        self.model.restore();
                         $(this).dialog('close');
                         self.close();
                     }

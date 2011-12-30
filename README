@@ -1,2 +1,8 @@
 Backbone + Backbone.Marionette + NodeJS + Express
-to run node App.js
+to run node server.js
+
+node packages:
+express
+jshtml
+node-uuid
+underscore
