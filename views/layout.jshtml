@@ -20,18 +20,12 @@
 		<script src="/Scripts/Thirdparty/jquery-ui-1.8.16.min.js" type="text/javascript"></script>
 		<script src="/Scripts/Thirdparty/jquery.tmpl.min.js" type="text/javascript"></script>
 		<script src="/Scripts/Thirdparty/jquery.validate.js" type="text/javascript"></script>
-		<script src="/Scripts/Thirdparty/amplify.min.js" type="text/javascript"></script>
 		<script src="/Scripts/Thirdparty/underscore.min.js" type="text/javascript"></script>
 		<script src="/Scripts/Thirdparty/backbone.js" type="text/javascript"></script>
-		<!--<script src="/Scripts/backbone-mvc-sync.js" type="text/javascript"></script>-->
-		<!-- use below to use localstorage - session storage -->	
-		<!--<script src="/Scripts/backbone-amplifySessionStorage.js" type="text/javascript"></script>-->
-		<!--<script src="/Scripts/Thirdparty/backbone.validations.js" type="text/javascript"></script>-->
 		<script src="/Scripts/Thirdparty/jquery.validate.js" type="text/javascript"></script>
 		<script src="/Scripts/Thirdparty/backbone.modelbinding.js" type="text/javascript"></script> 
 		<script src="/Scripts/Thirdparty/backbone.marionette.js" type="text/javascript"></script>
-		<script src="/Scripts/Thirdparty/backbone.memento.js" type="text/javascript"></script>
-		<script src="/Scripts/Thirdparty/modernizr-1.7.min.js" type="text/javascript"></script>        
+		<script src="/Scripts/Thirdparty/backbone.memento.js" type="text/javascript"></script>		
 	</head>
     <body>
 
