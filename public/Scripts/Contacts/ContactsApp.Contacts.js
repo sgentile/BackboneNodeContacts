@@ -140,12 +140,14 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
                 modal: true,
                 buttons:{
                     "Update Contact": function(){
-                        self.model.save(self.model, {
-                            success: function () {
-                                $(this).dialog('close');
-                                self.close();
-                            }
-                        });
+                    	if($("#edit-contact-form").valid()) {
+							self.model.save(self.model, {
+	                            success: function () {
+	                                $(this).dialog('close');
+	                                self.close();
+	                            }
+	                        });
+						}
                     },
                     cancel: function () {
                         // Close the dialog:
@@ -153,13 +155,22 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
                         $(this).dialog('close');
                         self.close();
                     }
-                }
+                },
+                close: function(event, ui) {
+                    	if(!$("#edit-contact-form").valid()){                    		
+							self.model.restore();
+						}
+						if(!self.model.hasChanges){
+							self.model.restore();
+						}
+                    }
             });
         },
 		render: function () { 
 			console.log('render');
 		},
 		close: function () {
+			
 			this.remove();
 			this.unbind();
 			Backbone.ModelBinding.unbind(this);
