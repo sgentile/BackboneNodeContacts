@@ -3,35 +3,49 @@
 <script src="/Scripts/Home/ContactsApp.Home.js" type="text/javascript"></script>
 <script src="/Scripts/Contacts/ContactsApp.Contacts.js" type="text/javascript"></script>
 <style>
-    #contactsRegion
-    {
-        float: left;
-        width: 300px;
-    }
-    #mainRegion
-    {
-        float: left;
-        minWidth:300px;
-    }
-    .remove-contact
-    {
-        color: red;
-        text-decoration: underline;
-        cursor: pointer;
-    }
-    .edit-contact, .contact-details
-    {
-        text-decoration: underline;
-        cursor: pointer;
-    }
+body,
+html {
+	margin:0;
+	padding:0;
+	color:#000;
+	background:#a7a09a;
+}
+
+#wrap {
+	width: 750px;
+	margin: 0 auto;	
+}
+
+#contactsRegion {
+    float: left;
+	width: 300px;
+}
+#mainRegion {
+    float: right;
+	width: 450px;
+}
+
+.remove-contact, .edit-contact, .contact-details
+{
+	font-size:small;
+	margin : 2px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.contact-name{
+	font-size:medium;
+	margin-left: 2px;
+}
 </style>
 
-<h3>Simple View Switching Demo with Backbone</h3>
+<div id="wrap">
+<h2>Contacts - Sample Backbone.Marionette Application</h2>
 <div id="contactsRegion">
 </div>
 <div id="mainRegion">
 </div>
 <div id="editContactsModalRegion"></div>
+</div>
 
 <script type="text/template" id="edit-contact-template">  
 	<form id="edit-contact-form">

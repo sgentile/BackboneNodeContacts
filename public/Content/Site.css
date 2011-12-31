@@ -1,16 +1,38 @@
-body
-{
-    font-size: .85em;
+
+body,
+html {
+	font-size: .85em;
     font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
-    color: #232323;
-    background-color: #fff;
+	margin:0;
+	padding:0;
+	color:#000;
+	background:#a7a09a;
 }
 
-header,
-footer,
-nav,
-section {
-    display: block;
+#wrap {
+	width: 750px;
+	margin: 0 auto;	
+}
+
+#contactsRegion {
+    float: left;
+	width: 300px;
+}
+#mainRegion {
+    float: right;
+	width: 450px;
+}
+
+.remove-contact, .edit-contact, .contact-details
+{
+	font-size:small;
+	margin : 2px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.contact-name{
+	font-size:medium;
+	margin-left: 2px;
 }
 
 /* Styles for basic forms
@@ -47,33 +69,3 @@ textarea
 /*label { width: 10em; float: left; }*/
 label.error { float: none; color: red; padding-left: .5em; vertical-align: top; }
 
-
-/* Styles for validation helpers
------------------------------------------------------------
-.field-validation-error
-{
-    color: #ff0000;
-}
-
-.field-validation-valid
-{
-    display: none;
-}
-
-.input-validation-error
-{
-    border: 1px solid #ff0000;
-    background-color: #ffeeee;
-}
-
-.validation-summary-errors
-{
-    font-weight: bold;
-    color: #ff0000;
-}
-
-.validation-summary-valid
-{
-    display: none;
-}
-*/

@@ -1,8 +1,9 @@
 <a href="#contacts">Back</a>
-
-<h3>${firstname} ${lastname}</h3>
+<fieldset>
+		<legend>Contact Details for ${firstname} ${lastname}</legend>
 <ul>
 {{each phonenumbers}}
     <li>${number}</li>
 {{/each}}
 </ul>
+</fieldset>

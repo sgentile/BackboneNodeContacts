@@ -71,8 +71,10 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 			ViewSwitcherApp.showRoute("details/" + this.model.id);
 		},
 		remove: function () {
-			this.model.destroy();
-			Contacts.show();
+			if(confirm("Are you sure you want to delete this contact?")){
+				this.model.destroy();
+				Contacts.show();
+			}
 		},
 		edit: function () {
 			//ViewSwitcherApp.vent.trigger("editContact", this.model);
