@@ -39,7 +39,7 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 	Contacts.contacts = new Contacts.ContactModels();
 
 	Contacts.ContactView = Backbone.View.extend({
-		tagName: 'li',
+		tagName: 'dd',
 		model: Contacts.ContactModel,
 		initialize: function () {
 			_.bindAll(this, "render");
@@ -225,13 +225,17 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 	var init = false;
 	Contacts.show = function (id) {
 		//ViewSwitcherApp.editContactsModalRegion.show(new Contacts.EditContactView());
-		if(id){
+		if(id){			
 			var contactDetail = new Contacts.ContactModel({id: id});
 			contactDetail.fetch({
-					 success: function(model, response){						
-						 ViewSwitcherApp.mainRegion.show(new Contacts.ContactDetailsView({model:model}));
-						 ViewSwitcherApp.showRoute("details/" + model.id);
-					 }
+					 success: function(model, response){
+					 	model.parse(response);
+					 	ViewSwitcherApp.mainRegion.show(new Contacts.ContactDetailsView({model:model}));
+						 //ViewSwitcherApp.showRoute("details/" + model.id);
+					 },
+					 error: function() {
+                		alert("error");
+            		}
 			});
 		}else{
 			ViewSwitcherApp.mainRegion.show(new Contacts.AddContactView());

@@ -33,6 +33,19 @@ app.get("/Contact", function(req, res){
 	res.send(contacts);
 });
 
+app.get('/Contact/:id', function(req, res){
+	console.log(req.params.id);
+	var getContact = _.find(contacts, function(c){
+		return req.params.id == c.id;
+	});
+	console.log("Get by id " + req.params.id + JSON.stringify(getContact));
+	if(getContact){
+		res.send(getContact);}
+	else{
+		res.send({id:null});
+	}
+});
+
 app.post('/Contact', function(req, res){
 	var newContact = req.body;
 	newContact.id = uuid.v1();

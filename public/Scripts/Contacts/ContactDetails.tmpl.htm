@@ -1,9 +1,16 @@
 <a href="#contacts">Back</a>
+{{if id}}
 <fieldset>
 		<legend>Contact Details for ${firstname} ${lastname}</legend>
-<ul>
+		<h3>Phone Numbers:</h3>
+<dt>
 {{each phonenumbers}}
-    <li>${number}</li>
+    <dd>${number}</dd>
 {{/each}}
-</ul>
+</dt>
+<button id="add-phone-number">Add Number</button>
+<div id="add-phone-number"></div>
 </fieldset>
+{{else}}
+<p>No contact exist with this id</p>
+{{/if}}
