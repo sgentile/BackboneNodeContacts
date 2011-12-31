@@ -20,14 +20,14 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 			phonenumbers : new Contacts.PhoneNumbers()
 		},
 		initialize: function(){
-			this.phonenumbers = new Contacts.PhoneNumbers()
+			this.phonenumbers = new Contacts.PhoneNumbers();
 			var memento = new Backbone.Memento(this);
 		    _.extend(this, memento);
 		},
 		addPhoneNumber : function(number){
-			var pn = this.get('phonenumbers');
-			var phoneNumber = new Contacts.PhoneNumber({number:"222-222-2222"});
-			pn.add(phoneNumber);
+			//this.phonenumbers.reset(this.get('phonenumbers'));
+			var phoneNumber = new Contacts.PhoneNumber({number:number});
+			this.phonenumbers.add(phoneNumber);
 		}
 	});
 	
@@ -89,7 +89,7 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 			this.collection.bind("add", this.render);
 			this.collection.bind("fetch", this.render);
 			this.collection.bind('remove', this.render);
-
+			Contacts.contacts.reset();
 			Contacts.contacts.fetch({ add: true });			
 		},
 		render: function () {
@@ -150,8 +150,11 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 	
 	Contacts.ContactDetailsView = Backbone.View.extend({
 		initialize: function () {
-			this.template = $("#contact-details-template");
-			//this.model.bind("change", this.render);
+			//this.model.bind('change', this.render);
+		},
+		events:{
+			"click #add-phone-number" : "showAddPhoneNumber",
+			"click .remove-number" : "removePhoneNumber"
 		},
 		render: function () {
 			var path = "/template/Contacts/ContactDetails";
@@ -165,14 +168,57 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 			});
 
 			return this;
+		},
+		showAddPhoneNumber : function(){
+			ViewSwitcherApp.addPhoneNumberRegion.show(new Contacts.AddPhoneNumberView({model:this.model}));
+		},
+		removePhoneNumber : function(item){
+			if(confirm("Remove this phone number?")){
+				var phoneId = $(item.currentTarget).data("pn");
+	
+				var phoneNumber = _.find(this.model.get("phonenumbers"), function(number){
+					return number.id === phoneId;
+				});
+				//var pn = this.model.get("phonenumbers");
+				var updatedNumbers = _.without(this.model.get("phonenumbers"), phoneNumber);
+				this.model.set({phonenumbers:updatedNumbers});
+				//this.model.set("phonenumbers", phoneNumbers)
+				console.log(JSON.stringify(this.model));
+				this.model.save();	
+				ViewSwitcherApp.mainRegion.show(new Contacts.ContactDetailsView({model:this.model}));
+			}
+		}
+	});
+	
+	Contacts.AddPhoneNumberView = Backbone.View.extend({
+		el: "#addPhoneNumberRegion",
+		render: function(){
+			var path = "/template/Contacts/AddPhoneNumber";
+			var self = this;
+			console.log(path);
+			$.get(path, function(markup) {
+				$.template( "addphonenumbertemplate", markup );
+				var content = $.tmpl("addphonenumbertemplate", self.model.toJSON());
+
+				$(self.el).html(content);
+			});
+
+			return this;
+		}, 
+		events:{
+			"click #add-new-phonenumber" : "addPhoneNumber"		
+		},
+		addPhoneNumber : function(){
+			var pn = this.model.get("phonenumbers");
+			pn.push(new Contacts.PhoneNumber({number:$("#phonenumber").val()}));
+			this.model.save();
+			ViewSwitcherApp.mainRegion.show(new Contacts.ContactDetailsView({model:this.model}));	
 		}
 	});
 
 	Contacts.EditContactView = Backbone.View.extend({
         initialize: function () {
 			this.template = $("#edit-contact-template");
-			//_.bindAll(this, "editContact");
-			//ViewSwitcherApp.vent.bind('editContact', this.editContact);
 		},
         onShow: function(){
             var self = this;
@@ -241,10 +287,10 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 			ViewSwitcherApp.mainRegion.show(new Contacts.AddContactView());
 			ViewSwitcherApp.showRoute("contacts");
 		}
-		if(!init){
+		//if(!init){
 			ViewSwitcherApp.contactsRegion.show(new Contacts.ContactsListView({ collection: Contacts.contacts }));
-			init = true;
-		}
+		//	init = true;
+		//}
 	};
 	return Contacts;
 })(ViewSwitcherApp, Backbone);

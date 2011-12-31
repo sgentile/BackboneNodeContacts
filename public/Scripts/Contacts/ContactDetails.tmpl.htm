@@ -5,11 +5,11 @@
 		<h3>Phone Numbers:</h3>
 <dt>
 {{each phonenumbers}}
-    <dd>${number}</dd>
+    <dd><span class="remove-number" data-pn="${id}">${number}</span></dd>
 {{/each}}
 </dt>
 <button id="add-phone-number">Add Number</button>
-<div id="add-phone-number"></div>
+<div id="addPhoneNumberRegion"></div>
 </fieldset>
 {{else}}
 <p>No contact exist with this id</p>

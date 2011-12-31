@@ -84,7 +84,7 @@ app.put('/Contact/:id', function(req, res){
 	var editContact = _.find(contacts, function(c){
 		return req.body.id == c.id;
 	});
-  	editContact.firstname = req.body.firstname;
+	editContact.firstname = req.body.firstname;
 	editContact.lastname = req.body.lastname;
 	if(req.body.phonenumbers){
 		editContact.phonenumbers = req.body.phonenumbers;
@@ -95,7 +95,7 @@ app.put('/Contact/:id', function(req, res){
 		});
 	}
 	console.log("Update " + JSON.stringify(editContact));
-  	res.send(req.body);
+  	res.send(editContact);
 });
 
 app.del('/Contact/:id', function(req, res){

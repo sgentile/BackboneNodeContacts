@@ -23,7 +23,7 @@ html {
 	width: 450px;
 }
 
-.remove-contact, .edit-contact, .contact-details
+.remove-contact, .edit-contact, .contact-details, .remove-number
 {
 	font-size:small;
 	margin : 2px;

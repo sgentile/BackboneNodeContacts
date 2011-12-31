@@ -16,7 +16,8 @@ ViewSwitcherApp = new Backbone.Marionette.Application();
 ViewSwitcherApp.addRegions({
 	contactsRegion: "#contactsRegion",
 	mainRegion: "#mainRegion",
-	editContactsModalRegion: "#editContactsModalRegion"
+	editContactsModalRegion: "#editContactsModalRegion",
+	addPhoneNumberRegion: "#addPhoneNumberRegion"
 });
 
 ViewSwitcherApp.bind("initialize:after", function () {
