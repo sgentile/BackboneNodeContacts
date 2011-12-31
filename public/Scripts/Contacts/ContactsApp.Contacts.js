@@ -72,6 +72,7 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 		},
 		remove: function () {
 			this.model.destroy();
+			Contacts.show();
 		},
 		edit: function () {
 			//ViewSwitcherApp.vent.trigger("editContact", this.model);
@@ -227,12 +228,12 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 			contactDetail.fetch({
 					 success: function(model, response){						
 						 ViewSwitcherApp.mainRegion.show(new Contacts.ContactDetailsView({model:model}));
-						 //ViewSwitcherApp.showRoute("details/" + model.id);
+						 ViewSwitcherApp.showRoute("details/" + model.id);
 					 }
 			});
 		}else{
 			ViewSwitcherApp.mainRegion.show(new Contacts.AddContactView());
-			//ViewSwitcherApp.showRoute("contacts");
+			ViewSwitcherApp.showRoute("contacts");
 		}
 		if(!init){
 			ViewSwitcherApp.contactsRegion.show(new Contacts.ContactsListView({ collection: Contacts.contacts }));
