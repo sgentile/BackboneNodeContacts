@@ -19,7 +19,8 @@ var contacts =  [];
 var contact = {
 	id : uuid.v1(),
 	firstname: "Steve",
-	lastname : "Gentile"
+	lastname : "Gentile",
+	phonenumbers : [{"id" : uuid.v1(), "number": "111-111-1111"}]
 }
 
 contacts.push(contact);
@@ -36,6 +37,11 @@ app.post('/Contact', function(req, res){
 	var newContact = req.body;
 	newContact.id = uuid.v1();
 	console.log("Create " + JSON.stringify(newContact));
+	if(newContact.phonenumbers){
+		_.each(newContact.phonenumbers, function(phonenumber){
+			phonenumber.id = uuid.v1();
+		});
+	}
 	contacts.push(newContact);
 	res.send(req.body);
 });
@@ -67,6 +73,14 @@ app.put('/Contact/:id', function(req, res){
 	});
   	editContact.firstname = req.body.firstname;
 	editContact.lastname = req.body.lastname;
+	if(req.body.phonenumbers){
+		editContact.phonenumbers = req.body.phonenumbers;
+		_.each(editContact.phonenumbers, function(phonenumber){
+			if(!phonenumber.id){
+				phonenumber.id = uuid.v1();
+			}
+		});
+	}
 	console.log("Update " + JSON.stringify(editContact));
   	res.send(req.body);
 });

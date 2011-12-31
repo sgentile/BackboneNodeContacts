@@ -6,11 +6,12 @@
     #contactsRegion
     {
         float: left;
-        width: 200px;
+        width: 300px;
     }
     #mainRegion
     {
         float: left;
+        minWidth:300px;
     }
     .remove-contact
     {
@@ -18,7 +19,7 @@
         text-decoration: underline;
         cursor: pointer;
     }
-    .edit-contact
+    .edit-contact, .contact-details
     {
         text-decoration: underline;
         cursor: pointer;

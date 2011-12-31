@@ -1,17 +1,36 @@
 ﻿/******  CONTACTS ******/
 ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 	var Contacts = {};
+	Contacts.PhoneNumber = Backbone.Model.extend({
+		defaults:{
+			id: null,
+			number : ""
+		}
+	});
+	Contacts.PhoneNumbers = Backbone.Collection.extend({
+		model: Contacts.PhoneNumber
+	});
+	
 	Contacts.ContactModel = Backbone.Model.extend({
+		urlRoot: "Contact",
 		defaults: {
 			id: null,
 			firstname: "",
-			lastname: ""
+			lastname: "",
+			phonenumbers : new Contacts.PhoneNumbers()
 		},
 		initialize: function(){
-		    var memento = new Backbone.Memento(this);
+			this.phonenumbers = new Contacts.PhoneNumbers()
+			var memento = new Backbone.Memento(this);
 		    _.extend(this, memento);
-		 }
+		},
+		addPhoneNumber : function(number){
+			var pn = this.get('phonenumbers');
+			var phoneNumber = new Contacts.PhoneNumber({number:"222-222-2222"});
+			pn.add(phoneNumber);
+		}
 	});
+	
 	Contacts.ContactModels = Backbone.Collection.extend({
 		model: Contacts.ContactModel,
 		url: "Contact"
@@ -26,6 +45,7 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 			_.bindAll(this, "render");
 		},
 		events: {
+			"click span.contact-details" : "details",
 			"click span.remove-contact": "remove",
 			"click span.edit-contact": "edit"
 		},
@@ -46,6 +66,10 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 
 			return this;
 		},
+		details: function(){
+			ViewSwitcherApp.mainRegion.show(new Contacts.ContactDetailsView({model:this.model}));
+			ViewSwitcherApp.showRoute("details/" + this.model.id);
+		},
 		remove: function () {
 			this.model.destroy();
 		},
@@ -63,7 +87,7 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 			this.collection.bind("fetch", this.render);
 			this.collection.bind('remove', this.render);
 
-			Contacts.contacts.fetch({ add: true });
+			Contacts.contacts.fetch({ add: true });			
 		},
 		render: function () {
 			$(this.el).empty();
@@ -84,9 +108,6 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 			//this.model.bind('error', this.handleError);	
 			
 		},
-		//handleError: function(model, errors){
-		//	alert(JSON.stringify(errors));
-		//},
 		render: function () {
 			var path = "/template/Contacts/AddContact";
 			var self = this;
@@ -108,6 +129,8 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 		addContact: function (event) {
 			if($("#add-contact-form").valid())
 			{
+				this.model.addPhoneNumber("222-222-2222");
+				
 				Contacts.contacts.create(this.model, {
 					success: function(model, response){
 						ViewSwitcherApp.mainRegion.show(new Contacts.AddContactView());
@@ -119,6 +142,26 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 			this.remove();
 			this.unbind();
 			Backbone.ModelBinding.unbind(this);
+		}
+	});
+	
+	Contacts.ContactDetailsView = Backbone.View.extend({
+		initialize: function () {
+			this.template = $("#contact-details-template");
+			//this.model.bind("change", this.render);
+		},
+		render: function () {
+			var path = "/template/Contacts/ContactDetails";
+			var self = this;
+			console.log(path);
+			$.get(path, function(markup) {
+				$.template( "contactdetailstemplate", markup );
+				var content = $.tmpl("contactdetailstemplate", self.model.toJSON());
+
+				$(self.el).html(content);
+			});
+
+			return this;
 		}
 	});
 
@@ -176,12 +219,25 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 			Backbone.ModelBinding.unbind(this);
 		}
 	});
-
-	Contacts.show = function () {
+	var init = false;
+	Contacts.show = function (id) {
 		//ViewSwitcherApp.editContactsModalRegion.show(new Contacts.EditContactView());
-		ViewSwitcherApp.mainRegion.show(new Contacts.AddContactView());
-		ViewSwitcherApp.contactsRegion.show(new Contacts.ContactsListView({ collection: Contacts.contacts }));
-		ViewSwitcherApp.showRoute("contacts");
+		if(id){
+			var contactDetail = new Contacts.ContactModel({id: id});
+			contactDetail.fetch({
+					 success: function(model, response){						
+						 ViewSwitcherApp.mainRegion.show(new Contacts.ContactDetailsView({model:model}));
+						 //ViewSwitcherApp.showRoute("details/" + model.id);
+					 }
+			});
+		}else{
+			ViewSwitcherApp.mainRegion.show(new Contacts.AddContactView());
+			//ViewSwitcherApp.showRoute("contacts");
+		}
+		if(!init){
+			ViewSwitcherApp.contactsRegion.show(new Contacts.ContactsListView({ collection: Contacts.contacts }));
+			init = true;
+		}
 	};
 	return Contacts;
 })(ViewSwitcherApp, Backbone);

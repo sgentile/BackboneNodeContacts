@@ -25,7 +25,7 @@
 		<script src="/Scripts/Thirdparty/jquery.validate.js" type="text/javascript"></script>
 		<script src="/Scripts/Thirdparty/backbone.modelbinding.js" type="text/javascript"></script> 
 		<script src="/Scripts/Thirdparty/backbone.marionette.js" type="text/javascript"></script>
-		<script src="/Scripts/Thirdparty/backbone.memento.js" type="text/javascript"></script>		
+		<script src="/Scripts/Thirdparty/backbone.memento.js" type="text/javascript"></script>	
 	</head>
     <body>
 
