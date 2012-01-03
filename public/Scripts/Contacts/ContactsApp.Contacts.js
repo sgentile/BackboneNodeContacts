@@ -97,7 +97,9 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 			var els = [];
 			this.collection.models.forEach(function (contact) {
 				var view = new Contacts.ContactView({ model: contact });
-				els.push(view.render().el);
+				var newel = view.render().el;
+				els.push(newel);
+				$(newel).attr('id', contact.get('id'));
 			});
 			$(this.el).append(els);
 			return this;
@@ -133,9 +135,14 @@ ViewSwitcherApp.Contacts = (function (ViewSwitcherApp, Backbone) {
 			if($("#add-contact-form").valid())
 			{
 				this.model.addPhoneNumber("222-222-2222");
+				$('#status').empty();
 				
 				Contacts.contacts.create(this.model, {
 					success: function(model, response){
+						var successel = $("<div id='successmessage'></div>");
+						successel.text(model.get('id'));
+						$('#status').append(successel);
+
 						ViewSwitcherApp.mainRegion.show(new Contacts.AddContactView());
 					}
 				});
